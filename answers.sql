@@ -10,14 +10,13 @@ VALUES
     (102, 'Jane Smith', 'Tablet, Keyboard, Mouse'),
     (103, 'Emily Clark', 'Phone');
 
-
-CREATE TABLE Product (
+CREATE TABLE Product_1NF (
     OrderID INT,
     CustomerName VARCHAR(100),
     Product VARCHAR(50)
 );
 
-INSERT INTO Product (OrderID, CustomerName, Product)
+INSERT INTO Product_1NF (OrderID, CustomerName, Product)
 VALUES 
     (101, 'John Doe', 'Laptop'),
     (101, 'John Doe', 'Mouse'),
@@ -26,12 +25,10 @@ VALUES
     (102, 'Jane Smith', 'Mouse'),
     (103, 'Emily Clark', 'Phone');
 
-
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
     CustomerName VARCHAR(100)
 );
-
 
 CREATE TABLE Product (
     OrderID INT,
@@ -41,12 +38,10 @@ CREATE TABLE Product (
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 );
 
-
 INSERT INTO Orders (OrderID, CustomerName)
 SELECT DISTINCT OrderID, CustomerName
-FROM Product;
-
+FROM Product_1NF;
 
 INSERT INTO Product (OrderID, Product, Quantity)
-SELECT OrderID, Product, 1 AS Quantity
-FROM Product;
+SELECT OrderID, Product, 1
+FROM Product_1NF;

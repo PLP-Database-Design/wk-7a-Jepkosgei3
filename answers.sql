@@ -1,12 +1,23 @@
+CREATE TABLE ProductDetail (
+    OrderID INT,
+    CustomerName VARCHAR(100),
+    Products VARCHAR(255)
+);
 
-CREATE TABLE OrderDetails(
+INSERT INTO ProductDetail (OrderID, CustomerName, Products)
+VALUES 
+    (101, 'John Doe', 'Laptop, Mouse'),
+    (102, 'Jane Smith', 'Tablet, Keyboard, Mouse'),
+    (103, 'Emily Clark', 'Phone');
+
+
+CREATE TABLE Product (
     OrderID INT,
     CustomerName VARCHAR(100),
     Product VARCHAR(50)
 );
 
-
-INSERT INTO OrderDetails (OrderID, CustomerName, Product)
+INSERT INTO Product (OrderID, CustomerName, Product)
 VALUES 
     (101, 'John Doe', 'Laptop'),
     (101, 'John Doe', 'Mouse'),
@@ -21,7 +32,8 @@ CREATE TABLE Orders (
     CustomerName VARCHAR(100)
 );
 
-CREATE TABLE OrderItems (
+
+CREATE TABLE Product (
     OrderID INT,
     Product VARCHAR(50),
     Quantity INT,
@@ -32,9 +44,9 @@ CREATE TABLE OrderItems (
 
 INSERT INTO Orders (OrderID, CustomerName)
 SELECT DISTINCT OrderID, CustomerName
-FROM OrderDetails;
+FROM Product;
 
 
-INSERT INTO OrderItems (OrderID, Product, Quantity)
-SELECT OrderID, Product, Quantity
-FROM OrderDetails;
+INSERT INTO Product (OrderID, Product, Quantity)
+SELECT OrderID, Product, 1 AS Quantity
+FROM Product;

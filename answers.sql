@@ -1,12 +1,12 @@
 
-CREATE TABLE OrderDetails_1NF (
+CREATE TABLE OrderDetails(
     OrderID INT,
     CustomerName VARCHAR(100),
     Product VARCHAR(50)
 );
 
 
-INSERT INTO OrderDetails_1NF (OrderID, CustomerName, Product)
+INSERT INTO OrderDetails (OrderID, CustomerName, Product)
 VALUES 
     (101, 'John Doe', 'Laptop'),
     (101, 'John Doe', 'Mouse'),

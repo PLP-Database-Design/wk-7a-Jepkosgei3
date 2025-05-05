@@ -29,7 +29,6 @@ INSERT INTO Orders (OrderID, CustomerName)
 VALUES
 (201, 'Alice Brown'),
 (202, 'Bob White'),
-(203, 'Catherine Green'),
 (204, 'David Blue');
 
 
@@ -45,8 +44,4 @@ INSERT INTO Product (OrderID, Product, Quantity)
 VALUES
 (201, 'Smartwatch', 1),
 (201, 'Charger', 2),
-(202, 'Laptop', 1),
-(202, 'Mouse', 3),
-(203, 'Headphones', 2),
-(203, 'Keyboard', 1),
 (204, 'Smartphone', 1);

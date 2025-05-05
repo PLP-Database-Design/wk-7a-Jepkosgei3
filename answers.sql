@@ -17,7 +17,6 @@ VALUES
 (202, 'Bob White', 'Laptop'),
 (202, 'Bob White', 'Mouse'),
 (203, 'Catherine Green', 'Headphones'),
-(203, 'Catherine Green', 'Keyboard'),
 (204, 'David Blue', 'Smartphone');
 
 

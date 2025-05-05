@@ -2,23 +2,20 @@ DROP TABLE IF EXISTS Product;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS ProductDetail;
 
-
 CREATE TABLE ProductDetail (
     OrderID INT,
     CustomerName VARCHAR(100),
-    Products VARCHAR(100)
+    Product VARCHAR(100)
 );
 
-
-INSERT INTO ProductDetail(OrderID, CustomerName, Products)
+INSERT INTO ProductDetail(OrderID, CustomerName, Product)
 VALUES
-(201, 'Alice Brown', 'Smartwatch'),
-(201, 'Alice Brown', 'Charger'),
-(202, 'Bob White', 'Laptop'),
-(202, 'Bob White', 'Mouse'),
-(203, 'Catherine Green', 'Headphones'),
-(204, 'David Blue', 'Smartphone');
-
+(101, 'John Doe', 'Laptop'),
+(101, 'John Doe', 'Mouse'),
+(102, 'Jane Smith', 'Tablet'),
+(102, 'Jane Smith', 'Keyboard'),
+(102, 'Jane Smith', 'Mouse'),
+(103, 'Emily Clark', 'Phone');
 
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
@@ -27,10 +24,9 @@ CREATE TABLE Orders (
 
 INSERT INTO Orders (OrderID, CustomerName)
 VALUES
-(201, 'Alice Brown'),
-(202, 'Bob White'),
-(204, 'David Blue');
-
+(101, 'John Doe'),
+(102, 'Jane Smith'),
+(103, 'Emily Clark');
 
 CREATE TABLE Product (
     OrderID INT,
@@ -42,6 +38,9 @@ CREATE TABLE Product (
 
 INSERT INTO Product (OrderID, Product, Quantity)
 VALUES
-(201, 'Smartwatch', 1),
-(201, 'Charger', 2),
-(204, 'Smartphone', 1);
+(101, 'Laptop', 2),
+(101, 'Mouse', 1),
+(102, 'Tablet', 3),
+(102, 'Keyboard', 1),
+(102, 'Mouse', 2),
+(103, 'Phone', 1);
